@@ -120,6 +120,7 @@ public class Minotaur
         Thread [] guestsThreads = new Thread[guestsSize];
         Guest [] guests = new Guest[guestsSize];
         Labyrinth labyrinth = new Labyrinth(guestsSize);
+        long startTime = System.nanoTime();
 
         for (int i = 1; i < guestsSize; i++)
         {
@@ -231,6 +232,11 @@ public class Minotaur
                 e.printStackTrace();
             }
         }
+
+        long endTime = System.nanoTime();
+
+        System.out.println("\nTime it took to execute algorithm: " + String.format("%.4f",((double)(endTime - startTime) / 1000000)/1000) + " seconds" );
+
 
     }
 
